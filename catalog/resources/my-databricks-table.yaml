@@ -1,0 +1,13 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: my-databricks-table
+  description: A table in our Databricks platform that stores customer order data.
+  annotations:
+    "backstage.io/managed-by-location": "url:https://github.com/my-org/my-repo/blob/main/catalog/resources/my-databricks-table.yaml"
+    "backstage.io/view-url": "https://my-databricks-workspace.net/explore/data/tables/my_databricks_table"
+spec:
+  type: database-table
+  owner: my-team
+  dependencyOf:
+    - component:default/my-databricks-pipeline

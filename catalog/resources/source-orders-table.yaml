@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: source-orders-table
+  description: Source table containing raw order data.
+spec:
+  type: database-table
+  owner: my-team
+  partOf:
+    - component:default/my-complex-pipeline

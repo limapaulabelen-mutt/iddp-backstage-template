@@ -1,0 +1,14 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: my-databricks-dashboard
+  description: A dashboard that visualizes our Databricks data.
+  annotations:
+    "backstage.io/managed-by-location": "url:https://github.com/my-org/my-repo/blob/main/catalog/components/my-databricks-dashboard.yaml"
+    "backstage.io/view-url": "https://my-databricks-workspace.net/sql/dashboards/my_dashboard_id"
+spec:
+  type: service
+  lifecycle: experimental
+  owner: my-team
+  dependsOn:
+    - resource:default/my-databricks-table

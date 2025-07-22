@@ -1,0 +1,13 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: my-data-validation
+  description: A data validation contract for our Databricks table, ensuring data quality.
+  annotations:
+    "backstage.io/managed-by-location": "url:https://github.com/my-org/my-repo/blob/main/catalog/resources/my-data-validation.yaml"
+    "backstage.io/source-location": "url:https://github.com/my-org/my-repo/blob/main/data_contracts/my_contract.yaml"
+spec:
+  type: contract
+  owner: my-team
+  dependencyOf:
+    - component:default/my-databricks-pipeline

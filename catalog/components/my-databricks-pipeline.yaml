@@ -1,0 +1,16 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: my-databricks-pipeline
+  description: A Databricks job pipeline that builds our table.
+  annotations:
+    "backstage.io/managed-by-location": "url:https://github.com/my-org/my-repo/blob/main/catalog/components/my-databricks-pipeline.yaml"
+    "backstage.io/source-location": "url:https://github.com/my-org/my-repo/tree/main/pipelines/my_pipeline"
+spec:
+  type: data-pipeline
+  lifecycle: experimental
+  owner: my-team
+  providesApis: []
+  dependsOn:
+    - resource:default/my-databricks-table
+    - resource:default/my-data-validation

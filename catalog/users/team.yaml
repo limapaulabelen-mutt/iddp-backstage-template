@@ -1,0 +1,39 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: my-team
+  description: The team responsible for the Databricks Platform
+spec:
+  type: team
+  profile:
+    displayName: My Data Team
+    email: my-team@example.com
+    picture: https://example.com/avatars/team-logo.png
+  children: [] # This team has no sub-groups
+  members:
+    - user:default/jane-doe
+    - user:default/john-doe
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: jane-doe
+spec:
+  profile:
+    displayName: Jane Doe
+    email: jane.doe@example.com
+    picture: https://example.com/avatars/jane-doe.png
+  memberOf:
+    - my-team
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: john-doe
+spec:
+  profile:
+    displayName: John Doe
+    email: john.doe@example.com
+    picture: https://example.com/avatars/john-doe.png
+  memberOf:
+    - my-team

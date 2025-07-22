@@ -1,0 +1,18 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: my-complex-pipeline
+  description: A pipeline that joins order and customer data to produce an aggregated sales table.
+spec:
+  type: data-pipeline
+  lifecycle: experimental
+  owner: my-team
+  # The pipeline consumes these two source tables
+  dependsOn:
+    - resource:default/source-orders-table
+    - resource:default/source-customers-table
+  # The pipeline system is composed of these three tables
+  hasPart:
+    - resource:default/source-orders-table
+    - resource:default/source-customers-table
+    - resource:default/aggregated-sales-table

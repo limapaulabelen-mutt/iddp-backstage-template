@@ -1,0 +1,14 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: aggregated-sales-table
+  description: The final table with aggregated sales data, produced by our pipeline.
+spec:
+  type: database-table
+  owner: my-team
+  # This table is managed by and created by the pipeline
+  dependencyOf:
+    - component:default/my-complex-pipeline
+  # It is also conceptually a "part" of the overall pipeline system
+  partOf:
+    - component:default/my-complex-pipeline
