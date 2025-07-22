@@ -1,0 +1,12 @@
+# Archivo: /location.yaml
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: catalog-template-repo
+  description: Repository with backstage catalog & templates.
+spec:
+  targets:
+    # Every file under templates folder
+    - ./templates/**/*.yaml
+    # Every file under catalog folder
+    - ./catalog/**/*.yaml

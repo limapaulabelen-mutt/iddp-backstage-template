@@ -15,8 +15,9 @@ spec:
   parameters:
     - title: New data pipeline information
       required:
-        - name
-        - repository
+        - project_name
+        - repository_url
+        - 
       properties:
         name:
           title: Name
